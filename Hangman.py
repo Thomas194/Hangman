@@ -35,5 +35,7 @@ def game(choices) :
 
 
 if __name__ == "__main__" :
-    list = ["dog","cat","train","lunatic"]
-    game(list)
+    with open("hangman_list.txt","r+") as f :
+        choices1 = f.readlines()
+        choices = [x.strip() for x in choices1]
+    game(choices)
