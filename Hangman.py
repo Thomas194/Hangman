@@ -1,9 +1,9 @@
-# What will this do ?
-
 # Hangman
+import random
 
 # Guess
-def game(w) :
+def game(choices) :
+    w = random.choice(choices)
     word = [x.upper() for x in w]
     found = ["_" for x in w]
     wasted = []
@@ -19,7 +19,7 @@ def game(w) :
                         found[i] = guess
                 print("%s is in the word." % (guess))
                 if word == found :
-                    print("Congratulations!")
+                    print("Congratulations! The word was %s" % ("".join(word)))
                     break
             elif guess in word and guess in found or guess in wasted :
                 print("%s already guessed." % (guess))
@@ -35,4 +35,5 @@ def game(w) :
 
 
 if __name__ == "__main__" :
-    game("Muller")
+    list = ["dog","cat","train","lunatic"]
+    game(list)
