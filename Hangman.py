@@ -33,4 +33,4 @@ def game(w) :
 
 
 if __name__ == "__main__" :
-    game("Muller")
+    game("Thomas")
